@@ -2,16 +2,17 @@
 
 ## users テーブル
 
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| nick_name    | string  | null: false |
-| mail         | string  | null: false |
-| password     | string  | null: false |
-| name         | string  | null: false |
-| name_reading | string  | null: false |
-| year         | integer | null: false |
-| month        | integer | null: false |
-| day          | integer | null: false |
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nick_name          | string | null: false |
+| mail               | string | null: false |
+| password           | string | null: false |
+| first_name         | string | null: false |
+| last_name          | string | null: false |
+| first_name_reading | string | null: false |
+| last_name_reading  | string | null: false |
+| birthday           | date   | null: false |
+
 
 ### Association
 
@@ -22,16 +23,15 @@
 
 | Column       | Type      | Options                        |
 | ------------ | --------- | ------------------------------ |
-| item_name    | string    | null: false                    |
+| name         | string    | null: false                    |
 | image        | text      | null: false                    |
 | text         | text      | null: false                    |
-| genre        | string    | null: false                    |
-| item_status  | string    | null: false                    |
-| price        | string    | null: false                    |
-| postage      | string    | null: false                    |
-| prace        | string    | null: false                    |
-| delivery_day | string    | null: false                    |
-| sell         | boolean   |                                |
+| genre        | integer   | null: false                    |
+| status       | integer   | null: false                    |
+| price        | integer   | null: false                    |
+| postage      | integer   | null: false                    |
+| prace        | integer   | null: false                    |
+| delivery_day | integer   | null: false                    |
 | user         | reference | null: false, foreign_key: true |
 
 ### Association
@@ -48,6 +48,7 @@
 
 ### Association
 
+- belongs_to :user
 - belongs_to :item
 - has_one : address
 
@@ -59,7 +60,7 @@
 | prefecture    | integer    | null: false                    |
 | city          | string     | null: false                    |
 | house_number  | string     | null: false                    |
-| building_name | string     | null: false                    |
+| building_name | string     |                                |
 | phone_number  | integer    | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
