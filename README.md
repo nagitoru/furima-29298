@@ -30,7 +30,7 @@
 | status       | integer   | null: false                    |
 | price        | integer   | null: false                    |
 | postage      | integer   | null: false                    |
-| prace        | integer   | null: false                    |
+| place        | integer   | null: false                    |
 | delivery_day | integer   | null: false                    |
 | user         | reference | null: false, foreign_key: true |
 
