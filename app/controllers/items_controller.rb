@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
 
   def index
   end
@@ -6,5 +7,4 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
   end
-
 end
