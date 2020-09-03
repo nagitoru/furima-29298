@@ -1,5 +1,5 @@
-function salesCommission() {
-  clearInterval(salesCommission)
+window.addEventListener('load', function(){
+
   const itemPrice = document.getElementById("item-price");
   const addTaxPrice = document.getElementById('add-tax-price');
   const profit = document.getElementById('profit');
@@ -17,6 +17,4 @@ function salesCommission() {
       profit.innerHTML = word;
     }
   });
-}
-clearInterval(salesCommission)
-setInterval(salesCommission, 1000);
+});
