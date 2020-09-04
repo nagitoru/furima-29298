@@ -24,7 +24,6 @@
 | Column       | Type      | Options                        |
 | ------------ | --------- | ------------------------------ |
 | name         | string    | null: false                    |
-| image        | text      | null: false                    |
 | text         | text      | null: false                    |
 | genre        | integer   | null: false                    |
 | status       | integer   | null: false                    |
