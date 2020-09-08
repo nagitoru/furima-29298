@@ -4,11 +4,8 @@ RSpec.describe OrderAddress, type: :model do
   describe '購入情報の保存' do
     before do
       @user = FactoryBot.build(:user)
-      @user.save
       @item = FactoryBot.build(:item, user_id: @user.id)
-      @item.save
       @another_user = FactoryBot.build(:user)
-      @another_user.save
       @order_address = FactoryBot.build(:order_address, user_id: @another_user.id, item_id: @item.id)
     end
 
