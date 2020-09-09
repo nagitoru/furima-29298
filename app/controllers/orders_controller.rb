@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    redirect root_path unless user_signed_in? && current_user != @item.user
+    redirect_to root_path unless current_user.id != @item.user.id
     @order = OrderAddress.new
   end
 
