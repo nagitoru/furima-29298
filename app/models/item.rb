@@ -13,10 +13,10 @@ class Item < ApplicationRecord
     validates :image
     validates :name
     validates :text
-    validates :price, format: { with: /\A[0-9]+\z/, message: 'Harf-width characters' }
+    validates :price, format: { with: /\A[0-9]+\z/, message: 'は半角数字で入力してください' }
   end
-  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'Out of setting range' }
-  with_options numericality: { other_than: 1, message: "can't be blank" } do
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999, message: 'は300円以上9999999円以下にしてください' }
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :genre_id
     validates :status_id
     validates :postage_id
