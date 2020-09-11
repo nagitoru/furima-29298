@@ -37,42 +37,42 @@ RSpec.describe Item, type: :model do
       it 'priceが全角数字だと登録できないこと' do
         @item.price = '１２３４'
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price Out of setting range')
+        expect(@item.errors.full_messages).to include('Price は300円以上9999999円以下にしてください')
       end
       it 'priceが300円未満では登録できないこと' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price Out of setting range')
+        expect(@item.errors.full_messages).to include('Price は300円以上9999999円以下にしてください')
       end
       it 'priceが10,000,000円を超過すると登録できないこと' do
         @item.price = 10_000_001
         @item.valid?
-        expect(@item.errors.full_messages).to include('Price Out of setting range')
+        expect(@item.errors.full_messages).to include('Price は300円以上9999999円以下にしてください')
       end
       it 'genreを選択していないと登録できないこと' do
         @item.genre_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Genre can't be blank")
+        expect(@item.errors.full_messages).to include('Genre を選択してください')
       end
       it 'statusを選択していないと登録できないこと' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status can't be blank")
+        expect(@item.errors.full_messages).to include('Status を選択してください')
       end
       it 'postageが選択していないと登録できないこと' do
         @item.postage_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage can't be blank")
+        expect(@item.errors.full_messages).to include('Postage を選択してください')
       end
       it 'placeが選択していないと登録できないこと' do
         @item.place_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Place can't be blank")
+        expect(@item.errors.full_messages).to include('Place を選択してください')
       end
       it 'delivery_dayが選択していないと登録できないこと' do
         @item.delivery_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery day can't be blank")
+        expect(@item.errors.full_messages).to include('Delivery day を選択してください')
       end
     end
   end
