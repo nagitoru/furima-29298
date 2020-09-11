@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
       it 'passwordが半角英数字が混合していないときは登録できないこと' do
         @user.password = 123_123
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password Include both letters and numbers')
+        expect(@user.errors.full_messages).to include('Password は英字と数字を両方とも含んでください')
       end
       it 'passwordが5文字以下では登録できないこと' do
         @user.password = 12_345
@@ -62,7 +62,7 @@ RSpec.describe User, type: :model do
       it 'first_nameが全角日本語でないと登録できないこと' do
         @user.first_name = 'suzuki'
         @user.valid?
-        expect(@user.errors.full_messages).to include 'First name Full-width characters'
+        expect(@user.errors.full_messages).to include 'First name は漢字・ひらがな・カタカナのいずれかで入力してください'
       end
       it 'last_nameが空だと登録できないこと' do
         @user.last_name = nil
@@ -72,7 +72,7 @@ RSpec.describe User, type: :model do
       it 'lasr_nameが全角日本語でないと登録できないこと' do
         @user.last_name = 'taro'
         @user.valid?
-        expect(@user.errors.full_messages).to include 'Last name Full-width characters'
+        expect(@user.errors.full_messages).to include 'Last name は漢字・ひらがな・カタカナのいずれかで入力してください'
       end
       it 'first_name_readingが空だと登録できないこと' do
         @user.first_name_reading = nil
@@ -82,7 +82,7 @@ RSpec.describe User, type: :model do
       it 'fist_name_readingが全角カタカナでないと登録できないこと' do
         @user.first_name_reading = 'すずき'
         @user.valid?
-        expect(@user.errors.full_messages).to include 'First name reading Full-width katakana characters'
+        expect(@user.errors.full_messages).to include 'First name reading はカタカナで入力してください'
       end
       it 'last_name_readingが空だと登録できないこと' do
         @user.last_name_reading = nil
@@ -92,7 +92,7 @@ RSpec.describe User, type: :model do
       it 'last_name_readingが全角カタカナでないと登録できないこと' do
         @user.last_name_reading = 'たろう'
         @user.valid?
-        expect(@user.errors.full_messages).to include 'Last name reading Full-width katakana characters'
+        expect(@user.errors.full_messages).to include 'Last name reading はカタカナで入力してください'
       end
       it 'birthdayを選択していなければ登録できないこと' do
         @user.birthday = nil
