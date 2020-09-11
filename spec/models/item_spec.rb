@@ -52,27 +52,27 @@ RSpec.describe Item, type: :model do
       it 'genreを選択していないと登録できないこと' do
         @item.genre_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Genre を選択してください")
+        expect(@item.errors.full_messages).to include('Genre を選択してください')
       end
       it 'statusを選択していないと登録できないこと' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status を選択してください")
+        expect(@item.errors.full_messages).to include('Status を選択してください')
       end
       it 'postageが選択していないと登録できないこと' do
         @item.postage_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Postage を選択してください")
+        expect(@item.errors.full_messages).to include('Postage を選択してください')
       end
       it 'placeが選択していないと登録できないこと' do
         @item.place_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Place を選択してください")
+        expect(@item.errors.full_messages).to include('Place を選択してください')
       end
       it 'delivery_dayが選択していないと登録できないこと' do
         @item.delivery_day_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Delivery day を選択してください")
+        expect(@item.errors.full_messages).to include('Delivery day を選択してください')
       end
     end
   end
