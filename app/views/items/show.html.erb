@@ -92,7 +92,18 @@
       <% end %>
     <% else %>
       <h1> コメントの投稿には新規登録/ログインが必要です </h1>
-    <% end %> 
+    <% end %>
+    ＜コメント一覧＞
+    <div id="comments">
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= comment.user.nickname %>：</strong>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="links">
     <a href="#" class="change-item-btn">
