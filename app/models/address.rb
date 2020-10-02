@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :order
-  belongs_to_active_hash :genre
+  belongs_to_active_hash :place
 end
